@@ -14,8 +14,8 @@
   "contributes": {
     "commands": [
       {
-        "command": "del-comm.helloWorld",
-        "title": "Hello World"
+        "command": "del-comm.removeCommentsAndEmptyLines",
+        "title": "removeCommentsAndEmptyLines"
       }
     ]
   },
