@@ -1,8 +1,13 @@
 {
   "name": "del-comm",
+  "publisher": "CICSilver",
   "displayName": "del-comm",
   "description": "LEAVE BLANK",
   "version": "0.0.1",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/CICSilver/del-comm.git"
+  },
   "engines": {
     "vscode": "^1.83.0"
   },
@@ -14,8 +19,16 @@
   "contributes": {
     "commands": [
       {
-        "command": "del-comm.removeCommentsAndEmptyLines",
-        "title": "removeCommentsAndEmptyLines"
+        "command": "del-comm.delComments",
+        "title": "delComments"
+      }
+    ],
+    "keybindings":[
+      {
+        "command": "del-comm.delComments",
+        "key": "ctrl+alt+d",
+        "mac": "cmd+alt+d",
+        "when": "editorTextFocus"
       }
     ]
   },

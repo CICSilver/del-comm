@@ -5,7 +5,7 @@ import * as vscode from 'vscode';
 // This method is called when your extension is activated
 // Your extension is activated the very first time the command is executed
 export function activate(context: vscode.ExtensionContext) {
-	let disposable = vscode.commands.registerCommand('del-comm.removeCommentsAndEmptyLines', () => {
+	let disposable = vscode.commands.registerCommand('del-comm.delComments', () => {
 		const editor = vscode.window.activeTextEditor;
 		if (editor) {
 			const document = editor.document;
