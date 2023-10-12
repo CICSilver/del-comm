@@ -34,25 +34,3 @@ export function activate(context: vscode.ExtensionContext) {
 
 // This method is called when your extension is deactivated
 export function deactivate() {}
-
-
-// let disposable = vscode.commands.registerCommand('extension.removeCommentsAndEmptyLines', () => {
-// 	const editor = vscode.window.activeTextEditor;
-// 	if (editor) {
-// 		const document = editor.document;
-// 		const text = document.getText();
-
-// 		const withoutComments = text.replace(/\/\/.*[\n]|\/\*.*\*\/|^\s*(?=\r?$)\n/gm, '');
-
-// 		const edit = new vscode.WorkspaceEdit();
-// 		const range = new vscode.Range(
-// 			document.positionAt(0),
-// 			document.positionAt(text.length)
-// 		);
-// 		edit.replace(document.uri, range, withoutComments);
-
-// 		return vscode.workspace.applyEdit(edit);
-// 	}
-// });
-
-// context.subscriptions.push(disposable);
