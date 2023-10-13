@@ -7,8 +7,8 @@ del-comm is an extension to delete all comments and blank lines in (current) ope
 - `ctrl + alt + d`
 
 ## Known issues
-- will mistakenly delete regex with chars like // or /*
 
-### 0.0.2
+
+### 0.0.3
     support blank lines
     support c/c++ style comments

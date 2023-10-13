@@ -3,7 +3,7 @@
   "publisher": "CICSilver",
   "displayName": "del-comm",
   "description": "LEAVE BLANK",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "repository": {
     "type": "git",
     "url": "https://github.com/CICSilver/del-comm.git"
@@ -29,6 +29,27 @@
         "key": "ctrl+alt+d",
         "mac": "cmd+alt+d",
         "when": "editorTextFocus"
+      }
+    ],
+    "configuration":[
+      {
+        "title": "My Extension",
+        "type":"object",
+        "properties": {
+          "delCommExtension.commentStyle":{
+            "type":"array",
+            "default":[],
+            "description": "choose kind of comment to delete",
+            "items": {
+              "type":"string",
+              "enum": [
+                "//...",
+                "/*...*/",
+                "blank line"
+              ]
+            }
+          }
+        }
       }
     ]
   },

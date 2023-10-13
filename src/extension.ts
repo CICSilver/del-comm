@@ -4,19 +4,24 @@ import * as vscode from 'vscode';
 
 // This method is called when your extension is activated
 // Your extension is activated the very first time the command is executed
+/* ... */
 export function activate(context: vscode.ExtensionContext) {
 	let disposable = vscode.commands.registerCommand('del-comm.delComments', () => {
 		const editor = vscode.window.activeTextEditor;
+        // 匹配'//' 开头的注释
+        let double_slashes_regex = /(?<!\\)\/\/.*$/gm;
+        // 匹配'/* ... */' 注释
+        // 
+        let single_slashes_with_Asterisk_regex = /(?<!\/|['"])\s*\/\*[\s\S]*?\*\//gm;
+        // 匹配空行
+        let blank_lines_regex = /^\s*[\r\n]/gm;
 		if (editor) {
 			const document = editor.document;
 			const text = document.getText();
 
-			// 删除 // 开头的注释
-            let withoutComments = text.replace(/\/\/.*$/gm, '');
-            // 删除 /* ... */ 注释
-            withoutComments = withoutComments.replace(/\/\*[\s\S]*?\*\//gm, '');
-            // 删除空行
-            withoutComments = withoutComments.replace(/^\s*[\r\n]/gm, '');
+            let withoutComments = text.replace(double_slashes_regex, '');
+            withoutComments = withoutComments.replace(single_slashes_with_Asterisk_regex, '');
+            withoutComments = withoutComments.replace(blank_lines_regex, '');
 
 			const edit = new vscode.WorkspaceEdit();
             const range = new vscode.Range(
