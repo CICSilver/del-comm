@@ -2,8 +2,8 @@
   "name": "del-comm",
   "publisher": "CICSilver",
   "displayName": "del-comm",
-  "description": "LEAVE BLANK",
-  "version": "0.0.3",
+  "description": "delete all comments and blank lines from your code",
+  "version": "0.0.4",
   "repository": {
     "type": "git",
     "url": "https://github.com/CICSilver/del-comm.git"
@@ -33,19 +33,20 @@
     ],
     "configuration":[
       {
-        "title": "My Extension",
+        "title": "Del Comm",
         "type":"object",
         "properties": {
           "delCommExtension.commentStyle":{
             "type":"array",
-            "default":[],
+            "default":["blank line"],
             "description": "choose kind of comment to delete",
             "items": {
               "type":"string",
               "enum": [
                 "//...",
                 "/*...*/",
-                "blank line"
+                "blank line",
+                "#..."
               ]
             }
           }
